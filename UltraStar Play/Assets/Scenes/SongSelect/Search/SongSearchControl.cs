@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Linq.Dynamic;
+//using System.Linq.Dynamic;
 using ProTrans;
 using UniInject;
 using UniRx;
@@ -172,24 +172,24 @@ public class SongSearchControl : INeedInjection, IInjectionFinishedListener, ITr
     {
         string searchExp = searchTextField.value;
         searchErrorIcon.HideByDisplay();
-        if (IsSearchExpression(searchExp))
-        {
-            try
-            {
-                List<SongMeta> searchExpSongMetas = songMetas.AsQueryable()
-                    .Where(searchExp)
-                    .ToList();
-                return searchExpSongMetas;
-            }
-            catch (Exception e)
-            {
-                Debug.Log($"Invalid search expression '{searchExp}': {e.Message}. Stack trace:\n{e.StackTrace}");
-                searchErrorIcon.ShowByDisplay();
-                searchErrorIconTooltipControl.TooltipText = TranslationManager.GetTranslation(R.Messages.songSelectScene_searchExpressionError,
-                    "errorDetails", e.Message);
-                return new List<SongMeta>();
-            }
-        }
+        //if (IsSearchExpression(searchExp))
+        //{
+        //    try
+        //    {
+        //        List<SongMeta> searchExpSongMetas = songMetas.AsQueryable()
+        //            .Where(searchExp)
+        //           .ToList();
+        //        return searchExpSongMetas;
+        //   }
+        //    catch (Exception e)
+        //    {
+        //        Debug.Log($"Invalid search expression '{searchExp}': {e.Message}. Stack trace:\n{e.StackTrace}");
+        //        searchErrorIcon.ShowByDisplay();
+        //        searchErrorIconTooltipControl.TooltipText = TranslationManager.GetTranslation(R.Messages.songSelectScene_searchExpressionError,
+        //            "errorDetails", e.Message);
+        //        return new List<SongMeta>();
+        //    }
+        //}
 
         // Ignore prefix for special search syntax
         string searchText = GetRawSearchText() != "#"
