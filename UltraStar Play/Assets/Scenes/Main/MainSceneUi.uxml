@@ -7,7 +7,6 @@
                     <ui:VisualElement name="titleImage" class="titleImage" style="background-image: url(&apos;project://database/Assets/Common/Graphics/Icons/ultrastardx-icon-contour.svg?fileID=7388822144124034973&amp;guid=2784df2e61772dc448202fc152a4fcfc&amp;type=3#ultrastardx-icon-contour&apos;);" />
                     <ui:VisualElement name="titleAndDescription">
                         <ui:Label text="Main Menu" name="sceneTitle" class="titleText" />
-                        <ui:Label text="Button description" name="sceneSubtitle" class="titleSubText" style="width: auto;" />
                     </ui:VisualElement>
                 </ui:VisualElement>
             </ui:VisualElement>
@@ -21,11 +20,6 @@
             <ui:VisualElement name="settingsButtonContainer" style="background-color: rgba(0, 0, 0, 0);" />
             <ui:VisualElement name="space" class="mainSceneButtonSpacer" />
             <ui:VisualElement name="space" class="mainSceneButtonSpacer" />
-        </ui:VisualElement>
-        <ui:VisualElement name="versionInfoContainer" style="padding-left: 2px; padding-right: 2px; padding-top: 2px; padding-bottom: 2px; position: absolute; bottom: 0;">
-            <ui:Label text="Version: xx.yy.zz" name="semanticVersionText" style="font-size: 12px;" />
-            <ui:Label text="Commit: 5e07588" name="commitHashText" style="font-size: 12px;" />
-            <ui:Label text="Build timestamp: yyMMddHHmm" name="buildTimeStampText" style="font-size: 12px;" />
         </ui:VisualElement>
     </ui:VisualElement>
 </ui:UXML>

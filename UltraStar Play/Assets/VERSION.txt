@@ -1,4 +1,4 @@
 release = 0.0.1
-build_timestamp = 2511251422
-commit_hash = 6a63bc44
+build_timestamp = 2511252319
+commit_hash = 33eb96a4
 website_link = https://ultrastar-play.com/get
