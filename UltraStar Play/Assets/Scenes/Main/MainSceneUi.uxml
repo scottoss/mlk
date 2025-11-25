@@ -1,6 +1,6 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
     <ui:VisualElement name="background">
-        <ui:VisualElement name="logo" style="flex-grow: 1; background-color: rgba(0, 0, 0, 0); position: absolute; width: 100%; -unity-background-scale-mode: scale-to-fit; background-image: url(&apos;project://database/Assets/Scenes/Loading/UltraStarPlayLogo_2022_09.png?fileID=2800000&amp;guid=031fb3adf3099b840887ff7dc60c7ad2&amp;type=3#UltraStarPlayLogo_2022_09&apos;); height: 20%; top: 10px;" />
+        <ui:VisualElement name="logo" style="flex-grow: 1; background-color: rgba(0, 0, 0, 0); position: absolute; width: 100%; -unity-background-scale-mode: scale-to-fit; background-image: url(&apos;project://database/Assets/Common/Graphics/ExecutableIcons/ultrastardx-icon_512.png?fileID=2800000&amp;guid=f5743370fbf53b942b175ab203eb579e&amp;type=3#ultrastardx-icon_512&apos;); height: 20%; top: 10px;" />
         <ui:VisualElement style="flex-grow: 1; align-items: center; justify-content: center; margin-left: 10px; margin-right: 10px; margin-top: 10px; margin-bottom: 10px; padding-left: 10px; padding-right: 10px; padding-top: 10px; padding-bottom: 10px;">
             <ui:VisualElement name="titleContainer" style="align-items: flex-start; width: 100%;">
                 <ui:VisualElement name="titleImageAndText" style="flex-direction: row; align-items: center;">
@@ -13,32 +13,14 @@
             </ui:VisualElement>
             <ui:VisualElement name="space" class="mainSceneButtonSpacer" />
             <ui:VisualElement name="buttonRow" style="flex-direction: row; width: 100%; justify-content: center;">
-                <ui:Button text="Sing" name="startButton" class="startButtonClass mainSceneButton" style="text-shadow: 1px 1px 0 rgb(0, 0, 0); -unity-font-style: bold;" />
+                <ui:Button text="Sing" name="startButton" class="startButtonClass mainSceneButton" style="text-shadow: 1px 1px 0 rgb(0, 0, 0); -unity-font-style: bold; width: 153px;" />
                 <ui:VisualElement name="space" class="mainSceneButtonSpacer" />
-                <ui:Button text="Party" name="partyButton" class="mainSceneButton" />
+                <ui:Button text="Settings" name="settingsButton" class="mainSceneButton" style="width: 149px;" />
+                <MaterialIcon name="settingsProblemHintIcon" icon="warning" class="settingsProblemHintIcon warning rounded" />
             </ui:VisualElement>
+            <ui:VisualElement name="settingsButtonContainer" style="background-color: rgba(0, 0, 0, 0);" />
             <ui:VisualElement name="space" class="mainSceneButtonSpacer" />
-            <ui:VisualElement name="buttonRow" style="flex-direction: row; width: 100%; justify-content: center; align-items: center;">
-                <ui:Button text="Create Song" name="createSongButton" class="mainSceneButton" />
-                <ui:VisualElement name="space" class="mainSceneButtonSpacer" />
-                <ui:VisualElement name="settingsButtonContainer" style="background-color: rgba(0, 0, 0, 0);">
-                    <ui:Button text="Settings" name="settingsButton" class="mainSceneButton" />
-                    <MaterialIcon name="settingsProblemHintIcon" icon="warning" class="settingsProblemHintIcon warning rounded" />
-                </ui:VisualElement>
-                <ui:VisualElement name="space" class="mainSceneButtonSpacer" />
-                <ui:Button text="Quit" name="quitButton" class="mainSceneButton mainSceneExitButton" style="display: flex;" />
-                <ui:VisualElement style="position: absolute; right: 5px;" />
-            </ui:VisualElement>
             <ui:VisualElement name="space" class="mainSceneButtonSpacer" />
-            <ui:VisualElement name="bottomButtonRow" style="width: 100%; align-items: center; flex-direction: row; justify-content: flex-end; position: absolute; bottom: 5px;">
-                <ui:Button name="creditsButton" class="roundButton mainSceneButton" style="right: 5px;">
-                    <MaterialIcon name="creditsIcon" icon="groups" />
-                </ui:Button>
-                <ui:VisualElement name="space" class="mainSceneButtonSpacer" />
-                <ui:Button name="aboutButton" class="roundButton mainSceneButton" style="right: 5px;">
-                    <MaterialIcon name="aboutIcon" icon="info_outline" />
-                </ui:Button>
-            </ui:VisualElement>
         </ui:VisualElement>
         <ui:VisualElement name="versionInfoContainer" style="padding-left: 2px; padding-right: 2px; padding-top: 2px; padding-bottom: 2px; position: absolute; bottom: 0;">
             <ui:Label text="Version: xx.yy.zz" name="semanticVersionText" style="font-size: 12px;" />
