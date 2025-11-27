@@ -100,9 +100,15 @@ public class ContentDownloadSceneControl : MonoBehaviour, INeedInjection, ITrans
 
     private int extractedEntryCount;
 
+    public string JsonURL;
+	private string savePath;
     private void Start()
     {
-        songArchiveEntries = JsonConverter.FromJson<List<SongArchiveEntry>>(songArchiveEntryTextAsset.text);
+		savePath = Path.Combine(Application.persistentDataPath, "packs.json");
+		StartCoroutine(DownloadFile(JsonURL, savePath));
+		
+		//SongArchiveEntry jsnData = JsonConverter.FromJson<SongArchiveEntry>(JsonURL);
+        songArchiveEntries = JsonConverter.FromJson<List<SongArchiveEntry>>(savePath);
 
         statusLabel.text = "";
         SelectSongArchiveUrl(songArchiveEntries[0].Url);
@@ -125,6 +131,38 @@ public class ContentDownloadSceneControl : MonoBehaviour, INeedInjection, ITrans
         InputManager.GetInputAction(R.InputActions.usplay_back).PerformedAsObservable(5)
             .Subscribe(_ => OnBack());
     }
+	IEnumerator DownloadFile(string url, string path)
+    {
+        using (UnityWebRequest request = UnityWebRequest.Get(url))
+        {
+            // Send the request and wait for it to complete
+            yield return request.SendWebRequest();
+
+            if (request.result == UnityWebRequest.Result.Success)
+            {
+                // Save the downloaded data to the specified path
+                File.WriteAllBytes(path, request.downloadHandler.data);
+                Debug.Log($"File downloaded and saved to: {path}");
+            }
+            else
+            {
+                Debug.LogError($"Failed to download file: {request.error}");
+            }
+        }
+    }
+
+
+
+
+
+
+
+	
+	private void processJsonData(string _url)
+	{
+		SongArchiveEntry jsnData = JsonConverter.FromJson<SongArchiveEntry>(_url);
+	}
+	
 
     private void OnBack()
     {
